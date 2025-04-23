@@ -3,73 +3,94 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="/signature.png" />
     <title>Name Generator API</title>
     <link
       href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
       rel="stylesheet"
     />
   </head>
-  <body class="bg-gray-100 text-gray-800 font-sans">
-    <div class="max-w-2xl mx-auto mt-10 p-8 bg-white rounded-lg shadow-lg">
-      <h1 class="text-3xl font-bold mb-4 text-blue-600">
+  <body
+    class="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-gray-600 font-sans flex justify-center items-center min-h-screen"
+  >
+    <div
+      class="max-w-4xl w-full p-8 my-10 bg-white rounded-lg shadow-2xl transform transition-all duration-500 hover:scale-105"
+    >
+      <h1 class="text-4xl font-extrabold mb-4 text-blue-600 text-center">
         Welcome to the Name Generator API 🚀
       </h1>
-      <p class="mb-6 text-lg">
+      <p class="mb-6 text-lg text-center">
         This is a public API for generating random names based on gender and
         category.
       </p>
 
-      <h2 class="text-xl font-semibold mb-2">Available Routes:</h2>
-      <ul class="list-disc ml-6 space-y-2 mb-6">
+      <h2 class="text-2xl font-semibold mb-2">Available Routes:</h2>
+      <ul class="list-disc ml-6 space-y-2 mb-6 text-lg">
         <li>
-          <code class="bg-gray-200 px-2 py-1 rounded">GET /api/names</code> —
-          Get all names
+          <code
+            class="bg-gray-100 px-3 py-2 rounded-md text-sm font-medium text-blue-700"
+            >GET /api/names</code
+          >
+          — Get all names
         </li>
         <li>
-          <code class="bg-gray-200 px-2 py-1 rounded"
+          <code
+            class="bg-gray-100 px-3 py-2 rounded-md text-sm font-medium text-blue-700"
             >GET /api/names?gender=female&category=fantasy</code
           >
           — Filtered names
         </li>
         <li>
-          <code class="bg-gray-200 px-2 py-1 rounded">POST /api/names</code> —
-          Add a new name
-        </li>
-        <li>
-          <code class="bg-gray-200 px-2 py-1 rounded"
+          <code
+            class="bg-gray-100 px-3 py-2 rounded-md text-sm font-medium text-blue-700"
             >GET /api/names/random</code
           >
           — Get a random name
         </li>
         <li>
-          <code class="bg-gray-200 px-2 py-1 rounded"
+          <code
+            class="bg-gray-100 px-3 py-2 rounded-md text-sm font-medium text-blue-700"
             >GET /api/names/random/category/:category</code
           >
           — Random name by category
         </li>
         <li>
-          <code class="bg-gray-200 px-2 py-1 rounded"
+          <code
+            class="bg-gray-100 px-3 py-2 rounded-md text-sm font-medium text-blue-700"
             >GET /api/names/random/gender/:gender</code
           >
           — Random name by gender
         </li>
       </ul>
 
-      <h2 class="text-xl font-semibold mb-2">Available Categories:</h2>
-      <ul class="flex flex-wrap gap-2 mb-6">
-        <% categories.forEach(category => { %>
-        <li class="bg-gray-200 px-2 py-1 rounded"><%= category %></li>
-        <% }) %>
-      </ul>
+      <div class="text-center">
+        <h2 class="text-2xl font-semibold mb-2">Available Categories</h2>
+        <ul class="flex flex-wrap gap-3 mb-6 justify-center">
+          <% categories.forEach(category => { %>
+          <li
+            class="bg-gray-200 px-4 py-2 rounded-lg shadow-md hover:bg-blue-200 transition-all duration-300"
+          >
+            <%= category %>
+          </li>
+          <% }) %>
+        </ul>
 
-      <h2 class="text-xl font-semibold mb-2">Available Genders:</h2>
-      <ul class="flex gap-2">
-        <% genders.forEach(gender => { %>
-        <li class="bg-gray-200 px-2 py-1 rounded"><%= gender %></li>
-        <% }) %>
-      </ul>
+        <h2 class="text-2xl font-semibold mb-2">Available Genders</h2>
+        <ul class="flex gap-4 justify-center">
+          <% genders.forEach(gender => { %>
+          <li
+            class="bg-gray-200 px-4 py-2 rounded-lg shadow-md hover:bg-blue-200 transition-all duration-300"
+          >
+            <%= gender %>
+          </li>
+          <% }) %>
+        </ul>
+      </div>
 
-      <p class="mt-6 text-sm text-gray-500">Built with ❤️ by Jibee</p>
+      <p class="mt-6 text-sm text-center text-gray-500">
+        Built with ❤️ by
+        <a href="https://github.com/DarcMattz/" class="underline">Jibee</a>
+      </p>
     </div>
   </body>
 </html>
